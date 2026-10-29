@@ -1,0 +1,19 @@
+[package]
+name = "taskglass"
+version = "0.1.0"
+description = "A compact translucent desktop task widget"
+authors = ["peccatos"]
+license = "MIT"
+repository = "https://github.com/peccatos/taskglass"
+edition = "2021"
+
+[lib]
+name = "taskglass_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+tauri-plugin-global-shortcut = "2"

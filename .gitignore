@@ -1,0 +1,29 @@
+# Node
+node_modules/
+dist/
+
+# Rust / Tauri
+src-tauri/target/
+src-tauri/gen/
+
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# OneDrive / временные
+*.tmp
+~$*
+
+# Логи
+*.log
+npm-debug.log*
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# Секреты (на случай env-конфигов)
+.env
+.env.*

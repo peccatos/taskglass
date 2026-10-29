@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f8f8f8" />
+    <title>Taskglass</title>
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar" data-tauri-drag-region>
+        <div class="date-line" id="dateLine" data-tauri-drag-region>
+          <span class="weekday" id="weekday">Четверг</span>
+          <span class="date" id="date">29.10.26</span>
+        </div>
+        <div class="window-controls">
+          <button class="window-control" id="minimizeButton" aria-label="Свернуть окно" title="Свернуть"></button>
+          <button class="window-control close-window" id="closeButton" aria-label="Закрыть окно" title="Закрыть"></button>
+        </div>
+      </header>
+
+      <div class="clock" id="clock" aria-hidden="true">23:30</div>
+
+      <section class="task-grid" id="taskGrid" aria-label="Активные задачи"></section>
+
+      <footer class="bottom-bar">
+        <button class="footer-button" id="completedButton">Посмотреть выполненные</button>
+        <button class="footer-button primary-button" id="addButton">Добавить задачу</button>
+      </footer>
+
+      <form class="composer" id="composer" hidden>
+        <label class="composer-label" for="taskInput">Новая задача</label>
+        <div class="composer-row">
+          <input id="taskInput" name="task" maxlength="120" placeholder="Что нужно сделать?" autocomplete="off" required />
+          <button class="composer-submit" type="submit">Добавить</button>
+          <button class="composer-cancel" id="cancelComposer" type="button" aria-label="Отмена"></button>
+        </div>
+      </form>
+
+      <div class="empty-state" id="emptyState" hidden>
+        <span class="empty-title">Здесь пока пусто</span>
+        <span class="empty-description" id="emptyDescription">Добавьте задачу, чтобы начать.</span>
+      </div>
+      <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+      <div class="all-tasks-overlay" id="allTasksOverlay" hidden>
+        <div class="all-tasks-header" data-tauri-drag-region>
+          <span class="all-tasks-title" id="allTasksCount">Все задачи</span>
+          <button class="window-control" id="closeAllTasks" aria-label="Закрыть список" title="Закрыть"></button>
+        </div>
+        <div class="all-tasks-list" id="allTasksList"></div>
+      </div>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
